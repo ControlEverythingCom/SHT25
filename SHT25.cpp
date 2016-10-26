@@ -8,7 +8,7 @@ double SHT25::readHumidity(){
         Serial.println("Sensor coms failed");
         return 0.00;
     }
-    delay(500);
+    delay(100);
     Wire.requestFrom(address, 2);
     startTime = millis();
     while(Wire.available() < 2 && millis() < startTime + readTimeout);
@@ -33,7 +33,7 @@ double SHT25::readTempC(){
         Serial.println("Sensor coms failed");
         return 0.00;
     }
-    delay(500);
+    delay(100);
     Wire.requestFrom(address, 2);
     startTime = millis();
     while(Wire.available() < 2 && millis() < startTime + readTimeout);
